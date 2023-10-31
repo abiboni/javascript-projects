@@ -7,6 +7,7 @@ let computerStatusCode = 200;
 let shuttleSpeed = 15000;
 let fuelLevel = 20000
 let engineTemperature = 2500
+let commandOverride = false
 // BEFORE running the code, predict what will be printed to the console by the following statements:
 
 if (engineIndicatorLight === "green") {
@@ -46,4 +47,9 @@ if (fuelLevel < 1000 || engineTemperature > 3500 || engineIndicatorLight === "re
    console.log("Fuel level above 25%. Engines good.");
 } else {
    console.log("Fuel and engine status pending...");
+}
+if (fuelLevel > 20000 && engineIndicatorLight !== "red blinking" || commandOverride){
+   console.log ("Cleared to launch!")
+} else {
+   console.log ("Launch scrubbed!");
 }
